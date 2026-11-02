@@ -1,0 +1,4 @@
+IBM Plex Sans Arabic — SIL Open Font License 1.1 (IBM) — via @fontsource/ibm-plex-sans-arabic
+Inter — SIL Open Font License 1.1 (Rasmus Andersson) — via @fontsource-variable/inter
+Material Symbols (icons) — Apache License 2.0 (Google) — js/icons.js
+Material Color Utilities (palette generation, build-time only) — Apache License 2.0 (Google)

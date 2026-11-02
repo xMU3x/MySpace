@@ -1,0 +1,22 @@
+/* ===== Design Tokens — غيّر الهوية من هنا ===== */
+:root{
+ --font:'Inter','IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+ /* Type scale */
+ --fs-display:1.75rem;--fs-headline:1.25rem;--fs-title:1rem;--fs-body:.875rem;--fs-label:.8125rem;--fs-caption:.75rem;
+ --fw-regular:400;--fw-medium:500;--fw-bold:700;--lh-body:1.6;--lh-tight:1.25;
+ /* Shape */
+ --r-xs:6px;--r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-full:999px;
+ /* Spacing (4pt) */
+ --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;
+ /* Layout */
+ --nav-w:264px;--bar-h:72px;--top-h:56px;--page-max:1280px;--ic:1.4em;--tp:calc(10px + env(safe-area-inset-top));
+ /* Motion */
+ --ease:cubic-bezier(.2,0,0,1);--ease-in:cubic-bezier(.3,0,.8,.15);--ease-out:cubic-bezier(.05,.7,.1,1);
+ --dur-1:100ms;--dur-2:200ms;--dur-3:320ms;--dur-4:480ms;
+ /* State layers */
+ --st-hover:.08;--st-press:.12;
+ /* Elevation */
+ --e1:0 1px 2px rgb(0 0 0/.14),0 1px 3px 1px rgb(0 0 0/.08);--e2:0 1px 2px rgb(0 0 0/.14),0 2px 6px 2px rgb(0 0 0/.1);--e3:0 4px 8px 3px rgb(0 0 0/.12),0 1px 3px rgb(0 0 0/.2);--e4:0 8px 28px rgb(0 0 0/.28);
+ --glass:color-mix(in srgb,var(--surface-container) 68%,transparent);--glass-blur:blur(22px) saturate(1.6);
+}
+[data-th=dark]{--e1:0 1px 2px rgb(0 0 0/.4),0 1px 3px 1px rgb(0 0 0/.25);--e2:0 1px 2px rgb(0 0 0/.4),0 2px 6px 2px rgb(0 0 0/.3);--e3:0 4px 8px 3px rgb(0 0 0/.35),0 1px 3px rgb(0 0 0/.5);--e4:0 8px 28px rgb(0 0 0/.6)}
