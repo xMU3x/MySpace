@@ -14,3 +14,8 @@ Direct Upload للمجلد كله (أو GitHub). Build command فاضي، output
 
 ## 4) التثبيت
 أندرويد/كروم: زرار «تثبيت». آيفون: Safari ← Share ← Add to Home Screen.
+
+## الخط (Ping AR LT)
+الملفات في `fonts/` (woff2 + otf). الخط تجاري: استخدمه فقط لو معاك ترخيص (راجع `fonts/LICENSE-NOTE.txt`).
+المتوفر وزن Light فقط؛ لو عندك أوزان Regular/Bold حط ملفاتها في `fonts/` وأضف `@font-face` لها في أول `<style>` داخل `index.html`.
+بعد أي تعديل في الملفات غيّر رقم `V` في `service-worker.js` (مثلاً `myspace-v3`) عشان الأجهزة تاخد النسخة الجديدة.
