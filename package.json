@@ -1,0 +1,1 @@
+{"name":"myspace","private":true,"type":"module","scripts":{"gen":"node tools/gen.mjs"},"devDependencies":{"lucide-static":"^1.67.0"}}

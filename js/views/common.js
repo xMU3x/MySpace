@@ -1,0 +1,13 @@
+/* ===== views/common: مكونات مشتركة (Badge · Hatched bar · KPI · Empty state · Charts) ===== */
+const bd=(c,t,nd)=>`<span class="bd ${c}${nd?' nd':''}">${t}</span>`;
+const hb=(w,c='',t)=>`<div class="hb ${c}" style="--w:${Math.max(0,Math.min(100,w))}%${t!=null?`;--t:${Math.min(100,t)}%`:''}"><i></i>${t!=null?'<b></b>':''}</div>`;
+const kpi=(l,ic,n,u,sub,pill,tone='')=>`<div class="card kpi"><div class="kh"><span>${l}</span><span class="it ${tone}">${I(ic)}</span></div><div class="kn">${n}${u?` <small>${u}</small>`:''}</div><div class="kf"><span>${sub||''}</span>${pill||''}</div></div>`;
+const emptyS=(ic,t,d,btn='')=>`<div class="es"><div class="rings"><span class="it">${I(ic)}</span></div><h4>${t}</h4>${d?`<p>${d}</p>`:''}${btn}</div>`;
+const COLORS=['#1F6FFF','#7A3FF2','#8A8D9A','#F28A0F','#0E8A43','#D92D14','#14B8A6','#E0489B'];
+function area(vals,labels,unit){const W=640,H=190,pl=14,pr=14,top=38,bot=28,n=vals.length,mx=Math.max(...vals,1),X=i=>pl+i*(W-pl-pr)/Math.max(n-1,1),Y=v=>top+(1-v/mx)*(H-top-bot),P=vals.map((v,i)=>[X(i),Y(v)]);
+ let d=`M${P[0][0]},${P[0][1]}`;for(let i=1;i<n;i++){const[x0,y0]=P[i-1],[x1,y1]=P[i],c=(x0+x1)/2;d+=` C${c},${y0} ${c},${y1} ${x1},${y1}`}
+ const pk=vals.indexOf(Math.max(...vals)),[px,py]=P[pk],tw=92,tx=Math.min(Math.max(px-tw/2,2),W-tw-2),ty=Math.max(py-36,2);
+ return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="رسم بياني: ${vals.join('، ')}"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F6FFF" stop-opacity=".22"/><stop offset="1" stop-color="#1F6FFF" stop-opacity="0"/></linearGradient></defs><path d="${d} L${P[n-1][0]},${H-bot} L${P[0][0]},${H-bot}Z" fill="url(#ag)"/><path d="${d}" fill="none" stroke="#1F6FFF" stroke-width="2.2" stroke-linecap="round"/><line x1="${px}" x2="${px}" y1="${py}" y2="${H-bot}" stroke="currentColor" stroke-dasharray="3 3" opacity=".4"/><circle cx="${px}" cy="${py}" r="4.5" fill="#fff" stroke="#1F6FFF" stroke-width="2"/><rect x="${tx}" y="${ty}" width="${tw}" height="24" rx="8" fill="#0A0A0A"/><text class="tipt" x="${tx+tw/2}" y="${ty+16}" text-anchor="middle">${vals[pk]} ${unit}</text>${labels.map((l,i)=>`<text x="${X(i)}" y="${H-8}" text-anchor="${i==0?'start':i==n-1?'end':'middle'}">${l}</text>`).join('')}</svg>`}
+function dueBuckets(days,n=6){const T=new Date().setHours(0,0,0,0),step=days/n,vals=Array(n).fill(0),add=d=>{if(d==null||d<0||d>=days)return;vals[Math.min(n-1,Math.floor(d/step))]++};
+ all('item').forEach(i=>{if(i.d.exp)add(dl(i.d.exp))});all('ent').forEach(e=>add(nxt(e.d)));
+ return{vals,labels:vals.map((_,i)=>{const t=new Date(T+i*step*864e5);return `${t.getMonth()+1}/${t.getDate()}`})}}

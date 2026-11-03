@@ -1,0 +1,16 @@
+/* ===== Design Tokens — Soft ledger: ضوء + كروت بيضاء + أزرق واحد قوي ===== */
+:root{
+ --font:'Outfit','IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+ /* type scale */ --fs-display:2.5rem;--fs-h1:1.75rem;--fs-h2:1.25rem;--fs-h3:1rem;--fs-body:.875rem;--fs-small:.8125rem;--fs-cap:.75rem;
+ /* shape (Badge 8 · Tile 12 · Button 16 · Card 28) */ --r-badge:8px;--r-tile:12px;--r-btn:16px;--r-card:28px;--r-full:999px;
+ /* spacing */ --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;
+ /* layout */ --rail-w:72px;--page-max:1320px;
+ /* semantic (ثابتة — لا تُستخدم للزينة) */ --blue:#1F6FFF;--blue-press:#1558D6;--orange:#F28A0F;--green:#0E8A43;--red:#D92D14;
+ /* motion */ --ease:cubic-bezier(.2,0,0,1);--ease-in:cubic-bezier(.3,0,.8,.15);--ease-out:cubic-bezier(.05,.7,.1,1);--d1:120ms;--d2:200ms;--d3:320ms;--d4:480ms;
+}
+:root,[data-th=light]{--canvas:#E4E4EB;--glow:#C9D8F5;--surface:#fff;--surface-2:#F4F4F8;--surface-3:#EDEDF2;--track:#EDEDF2;--line:#ECECF1;--text:#0A0A0A;--muted:#6B6D7B;--ink-bg:#0A0A0A;--ink-fg:#fff;--panel:#0A0A0A;--tint:#E5EEFF;
+ --bd-g:#E6F4EC;--bd-gt:#0E8A43;--bd-o:#FDF0DD;--bd-ot:#B8650B;--bd-r:#FCE6E2;--bd-rt:#C2230F;--bd-b:#E5EEFF;--bd-bt:#1558D6;--bd-n:#ECECF1;--bd-nt:#5E6070;
+ --sh1:0 1px 2px rgb(16 24 40/.05),0 8px 24px rgb(16 24 40/.05);--sh2:0 2px 6px rgb(16 24 40/.08),0 16px 40px rgb(16 24 40/.1);--sh3:0 24px 64px rgb(16 24 40/.28);color-scheme:light}
+[data-th=dark]{--canvas:#090B10;--glow:#12306e66;--surface:#13161E;--surface-2:#1B1F29;--surface-3:#232836;--track:#232836;--line:#232836;--text:#F1F3F8;--muted:#9A9EB0;--ink-bg:#F1F3F8;--ink-fg:#0A0A0A;--panel:#06070A;--tint:#17294f;
+ --bd-g:#10301f;--bd-gt:#5BD08A;--bd-o:#3a2a0e;--bd-ot:#F5B35A;--bd-r:#3b1712;--bd-rt:#FF8A75;--bd-b:#14284f;--bd-bt:#7FB0FF;--bd-n:#232836;--bd-nt:#A3A7B8;
+ --sh1:0 1px 2px rgb(0 0 0/.4),0 8px 24px rgb(0 0 0/.3);--sh2:0 2px 6px rgb(0 0 0/.5),0 16px 40px rgb(0 0 0/.45);--sh3:0 24px 64px rgb(0 0 0/.7);color-scheme:dark}
